@@ -6,36 +6,6 @@ import HeaderBack from '../components/HeaderBack'
 import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler'
 import axios from 'axios';
 
-const posts = [
-    {
-        id: 1,
-        title: "10 Essential Tips for Beginner Photographers",
-        content: "This is my first post",
-        user: "John Doe 1",
-        date: "10/05/2023",
-    },
-    {
-        id: 2,
-        title: "The Benefits of Yoga for Mind and Body",
-        content: "This is my second post",
-        user: "John Doe 2",
-        date: "11/05/2023",
-    },
-    {
-        id: 3,
-        title: "Exploring the Wonders of Deep-Sea Diving",
-        content: "This is my third post",
-        user: "John Doe 3",
-        date: "12/05/2023",
-    },
-    {
-        id: 4,
-        title: "The Art of Home Brewing: A Beginner's Guide",
-        content: "This is my fourth post",
-        user: "John Doe 4",
-        date: "13/05/2023",
-    },
-]
 
 function Post(props) {
     const sheetRef = useRef(null);
