@@ -20,7 +20,6 @@ import axios from "axios";
 import moment from "moment/moment";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-
 function Home() {
   const navigation = useNavigation();
   const sheetRef = useRef(null);
@@ -40,7 +39,7 @@ function Home() {
 
   async function getUser() {
     let email = await AsyncStorage.getItem("userEmail");
-    console.log("email", email)
+    console.log("email", email);
     setUserEmail(email);
     getUserAPI(email);
   }
@@ -51,7 +50,7 @@ function Home() {
       const response = await axios.post("http://localhost:3000/users", {
         email: email,
       });
-      console.log("response", response)
+      console.log("response", response);
       setUserObj(response.data);
       console.log("OBJ", response.data);
     } catch (error) {
@@ -134,29 +133,6 @@ function Home() {
             style={styles.logo}
           />
         </TouchableWithoutFeedback>
-        {/* <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity
-            style={{ marginRight: 20 }}
-            onPress={() =>
-              navigation.navigate("Profile", {
-                userObj: userObj,
-                loggedInUser: userObj.userName,
-              })
-            }
-          >
-            <MaterialIcons name="person" size={45} color="black" />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() =>
-              navigation.navigate("Liked", {
-                emailUser: userEmail,
-                userObj: userObj,
-              })
-            }
-          >
-            <MaterialCommunityIcons name="heart" size={45} color="black" />
-          </TouchableOpacity>
-        </View> */}
       </View>
     );
   }
